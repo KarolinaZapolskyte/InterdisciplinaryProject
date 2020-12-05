@@ -2,12 +2,17 @@
 using Plantify.Models.ViewModels;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Plantify.Data;
 
 namespace Plantify.Controllers
 {
     public class CatalogueController : Controller
     {
-        public int PageSize = 4;
+        private PlantifyContext dataContext;
+        public int PageSize = 9;
+
+
+        public CatalogueController(PlantifyContext dbContext) { dataContext = dbContext; }
 
         // GET: Catalogue
         public ActionResult Index(string category, int page = 1)
@@ -15,7 +20,7 @@ namespace Plantify.Controllers
             ProductsListViewModel model = new ProductsListViewModel();
             model = new ProductsListViewModel
             {
-                Products = Repository.Products
+                Products = dataContext.Products
                 .OrderBy(p => p.ProductID)
                 .Where(p => category == null || p.Category == category)
                 .Skip((page - 1) * PageSize)
@@ -25,8 +30,8 @@ namespace Plantify.Controllers
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
                     TotalItems = category == null ?
-                    Repository.Products.Count() :
-                    Repository.Products.Where(e =>
+                    dataContext.Products.Count() :
+                    dataContext.Products.Where(e =>
                     e.Category == category).Count()
                 },
                 CurrentCategory = category
