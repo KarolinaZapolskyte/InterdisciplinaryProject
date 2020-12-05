@@ -69,24 +69,30 @@
         }*@
 
     
-    <div class="ladningSection"><img src="~/images/hero.png" /></div>
-
-
-
-
-        <h2>@Model.CurrentCategory</h2>
-
-        @foreach (Product product in Model.Products.OfType<Product>().ToList())
-        {
-            @await Html.PartialAsync("View", product)
-
-        }
-    
-    <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
-         page-class="btn" page-class-normal="btn-secondary"
-         page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
-         class="btn-group pull-right m-1">
+    <div class="landingSection"><img src="~/images/hero.png" class="heroImg" />
+                                <div class="landingText">
+                                    <h1>Service for home plants</h1>
+                                    <p>Simple, sophisticated and effortlessly elegant. Our Ecosphere Terrariums and bottle gardens combine an attractive light fitting with natural beauty, such as perennial grasses, or a seasonal succulent on preserved reindeer moss. </p>
+                                    <button class="btn shopNow">Shop now</button>
+                                </div>
+                                
     </div>
+
+    <div class="productSection">
+        <h2>@Model.CurrentCategory</h2>
+        <div class="productsDiv">
+            @foreach (Product product in Model.Products.OfType<Product>().ToList())
+            {
+                @await Html.PartialAsync("View", product)
+
+            }
+        </div>
+
+     
+    </div>
+
+
+     
 
 </body>
 </html>
