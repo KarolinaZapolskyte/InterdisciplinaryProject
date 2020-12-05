@@ -1,0 +1,108 @@
+.oxygen-bold {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 800;
+}
+
+body {
+    max-width: 1140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto
+}
+.product-img-price {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 72px;
+    grid-row-gap: 0px;
+}
+.border-around {
+    border: 1px solid #ACCCAB;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.border-around img {
+    display: flex;
+    margin: auto
+}
+
+.product-image {
+    margin: auto;
+    width: 504px;
+    height: 468px
+}
+
+.product-image img {
+    width: 408px;
+    height: auto;
+}
+
+.product-price {
+    width: 448px;
+    height: 468px
+}
+
+.product-price h1 {
+    font-size: 16px;
+}
+
+.product-price p {
+    font-size: 24px;
+}
+
+.quantity {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 0px;
+}
+
+.quantity p {
+    font-size: 16px;
+}
+
+.quantity input {
+    font-size: 16px;
+    height: 50px;
+    width: 88px;
+    border: 1px solid #ACCCAB;
+    border-radius: 16px
+}
+
+.description {
+    margin-top: 72px;
+    margin-bottom: 88px;
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 16px
+}
+
+h2 {
+    font-size: 20px
+}
+
+.recommended-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 56px;
+    grid-row-gap: 0px;
+    margin-top: 64px
+}
+
+.product {
+    width: 304px;
+}
+
+.product-name {
+    font-size: 20px
+}
+
+.product-price {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+    font-size: 20px
+}

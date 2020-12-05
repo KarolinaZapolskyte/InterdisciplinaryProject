@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ignas\\Documents\\GitHub\\InterdisciplinaryProject\\Plantify\\Plantify.csproj": {}
+    "C:\\Users\\zapol\\Desktop\\Code\\InterdisciplinaryProject\\Plantify\\Plantify.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ignas\\Documents\\GitHub\\InterdisciplinaryProject\\Plantify\\Plantify.csproj": {
+    "C:\\Users\\zapol\\Desktop\\Code\\InterdisciplinaryProject\\Plantify\\Plantify.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ignas\\Documents\\GitHub\\InterdisciplinaryProject\\Plantify\\Plantify.csproj",
+        "projectUniqueName": "C:\\Users\\zapol\\Desktop\\Code\\InterdisciplinaryProject\\Plantify\\Plantify.csproj",
         "projectName": "Plantify",
-        "projectPath": "C:\\Users\\Ignas\\Documents\\GitHub\\InterdisciplinaryProject\\Plantify\\Plantify.csproj",
-        "packagesPath": "C:\\Users\\Ignas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ignas\\Documents\\GitHub\\InterdisciplinaryProject\\Plantify\\obj\\",
+        "projectPath": "C:\\Users\\zapol\\Desktop\\Code\\InterdisciplinaryProject\\Plantify\\Plantify.csproj",
+        "packagesPath": "C:\\Users\\zapol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zapol\\Desktop\\Code\\InterdisciplinaryProject\\Plantify\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ignas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zapol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
         }
       }
     }
