@@ -70,15 +70,16 @@
 
     
     <div class="landingSection"><img src="~/images/hero.png" class="heroImg" />
-                                <div class="landingText">
-                                    <h1>Service for home plants</h1>
-                                    <p>Simple, sophisticated and effortlessly elegant. Our Ecosphere Terrariums and bottle gardens combine an attractive light fitting with natural beauty, such as perennial grasses, or a seasonal succulent on preserved reindeer moss. </p>
-                                    <button class="btn shopNow">Shop now</button>
-                                </div>
+                                
                                 
     </div>
 
     <div class="productSection">
+        <div class="landingText">
+            <h1 class="heroTxt">Service for home plants</h1>
+            <p class="pTxt">Simple, sophisticated and effortlessly elegant. Our Ecosphere Terrariums and bottle gardens combine an attractive light fitting with natural beauty, such as perennial grasses, or a seasonal succulent on preserved reindeer moss. </p>
+            <button class="btn shopNow">Shop now</button>
+        </div>
         <h2>@Model.CurrentCategory</h2>
         <div class="productsDiv">
             @foreach (Product product in Model.Products.OfType<Product>().ToList())
@@ -88,7 +89,7 @@
             }
         </div>
 
-     
+
     </div>
 
 

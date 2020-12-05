@@ -8,8 +8,8 @@
 
 .productSection{
     max-width:1140px;
-margin-left:auto;
-margin-right:auto;
+    margin-left:auto;
+    margin-right:auto;
 
 }
 .productsDiv{
@@ -31,9 +31,8 @@ margin-right:auto;
 
 }
 
-.landingSection h1 {
+.productSection .heroTxt {
   
-    font-family: Oxygen;
     font-style: normal;
     font-weight: bold;
     font-size: 64px;
@@ -42,7 +41,7 @@ margin-right:auto;
     font-family: 'Oxygen', sans-serif;
     
 }
-.landingSection p {
+.productSection .pTxt {
 
     font-family: Hind Madurai;
     font-style: normal;
@@ -52,6 +51,8 @@ margin-right:auto;
     color: #FFFFFF;
     width: 624px;
     padding-top:24px;
+    padding-bottom:24px;
+ 
 
 }
 .btn {
@@ -65,6 +66,7 @@ margin-right:auto;
     outline: none !important;
 
 }
+
     .btn:hover {
         background: #ACCCAB;
         
@@ -114,9 +116,28 @@ body{
     font-size: 16px;
     line-height: 20px;
     color: #000000;
+    max-height: 80px;
+    overflow: hidden;
 }
 .landingText{ 
     max-width:1140px;
     margin-left: auto;
     margin-right: auto;
+    position: absolute;
+    top: 98px;
+}
+
+.card-text .btn{
+    width:100%;
+    margin-top:16px;
+
+}
+.readMore {
+    text-decoration: none;
+    color: #007F2D;
+    font-family: Hind Madurai;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
 }
