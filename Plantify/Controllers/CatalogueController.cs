@@ -9,7 +9,7 @@ namespace Plantify.Controllers
     public class CatalogueController : Controller
     {
         private PlantifyContext dataContext;
-        public int PageSize = 9;
+        public int PageSize = 12;
 
 
         public CatalogueController(PlantifyContext dbContext) { dataContext = dbContext; }

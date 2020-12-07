@@ -2,13 +2,20 @@
 using Plantify.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using Plantify.Data;
 
 namespace Plantify.Controllers
 {
     public class InvoiceController : Controller
     {
+        private PlantifyContext dataContext;
+        public InvoiceController(PlantifyContext dbContext)
+        {
+            dataContext = dbContext;
+        }
         // GET: Invoice
         public IActionResult Index()
         {
@@ -17,11 +24,11 @@ namespace Plantify.Controllers
             List<SelectListItem> customers = new List<SelectListItem>();
 
             // generate the dropdown list
-            foreach (Invoice invoice in Repository.Invoices)
+            foreach (Invoice invoice in dataContext.Invoices.Include(invoice => invoice.Customer))
             {
                 customers.Add(new SelectListItem
                 {
-                    Text = invoice.Customer.Firstname + " " +  invoice.Customer.Lastname,
+                    Text = invoice.Customer.Firstname + " " + invoice.Customer.Lastname,
                     Value = invoice.Customer.CustomerId.ToString()
                 });
             }
@@ -30,7 +37,7 @@ namespace Plantify.Controllers
             customers = customers.GroupBy(x => x.Value).Select(y => y.First()).OrderBy(z => z.Text).ToList<SelectListItem>();
 
             ViewData["Customers"] = customers;
-            ViewData["Invoices"] = Repository.Invoices;
+            ViewData["Invoices"] = dataContext.Invoices.Include(invoice => invoice.OrderItems).ThenInclude(orderItem => orderItem.Product);
 
             return View();
         }
@@ -43,11 +50,11 @@ namespace Plantify.Controllers
             if (customer != null)
             {
                 // select invoices for a customer with linq
-                invoices = Repository.Invoices.Where(r => r.Customer.CustomerId == customer).ToList();
+                invoices = dataContext.Invoices.Include(invoice => invoice.Customer).Include(invoice => invoice.OrderItems).ThenInclude(orderItem => orderItem.Product).Where(r => r.Customer.CustomerId == customer).ToList();
             }
             else
             {
-                invoices = Repository.Invoices;
+                invoices = dataContext.Invoices.Include(invoice => invoice.OrderItems).ThenInclude(orderItem => orderItem.Product).ToList();
             }
 
 
@@ -55,9 +62,10 @@ namespace Plantify.Controllers
             List<SelectListItem> customers = new List<SelectListItem>();
 
             // generate the dropdown list
-            foreach (Invoice invoice in Repository.Invoices)
+            foreach (Invoice invoice in dataContext.Invoices.Include(invoice => invoice.Customer))
             {
-                if (invoice.Customer.CustomerId == customer) {
+                if (invoice.Customer.CustomerId == customer)
+                {
                     customers.Add(new SelectListItem
                     {
                         Text = invoice.Customer.Firstname + " " + invoice.Customer.Lastname,
@@ -65,7 +73,8 @@ namespace Plantify.Controllers
                         Selected = true
                     });
                 }
-                else { 
+                else
+                {
 
                     customers.Add(new SelectListItem
                     {

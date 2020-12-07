@@ -52,6 +52,12 @@ namespace Plantify
 
             app.UseEndpoints(endpoints =>
             {
+
+                endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+              );
+
                 endpoints.MapControllerRoute(
                 name: null,
                 pattern: "Catalogue/{category}/Page{page:int}",

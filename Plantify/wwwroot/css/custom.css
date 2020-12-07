@@ -65,6 +65,31 @@
         background: #30BA00;
     }
 
+
+.btn-pagination {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 56px;
+}
+    .btn-pagination a {
+        background: #007F2D;
+        border-radius: 8px;
+        padding: 16px 24px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        text-decoration: none;
+        outline: none !important;
+        margin-left: 24px;
+        width: auto;
+        text-align: center;
+    }
+
+    .btn-pagination a:hover {
+        background: #ACCCAB;
+    }
+
 .landingSection .btn {
 }
 
