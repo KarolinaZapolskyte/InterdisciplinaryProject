@@ -1,5 +1,6 @@
 ﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
-@model Plantify.Models.Product
+@model Plantify.Models.Product;
+@using Plantify.Models;
 
 <!doctype html>
 <html lang="en">
@@ -17,9 +18,15 @@
             <p class="oxygen-bold">DKK1390.95</p>
             <div class="quantity">
                 <p class="oxygen-bold">Quantity</p>
-                <input />
+                <div class="input-group">
+                    <input type="text" id="myNumber" class="form-control input-number" value="1" />
+                    <div class="arrows">
+                        <img src="~/images/arrow.svg" id="up" onclick=" up('15')" />
+                        <img src="~/images/arrow.svg" id="down" onclick="down('0')" />
+                    </div>
+                </div>
             </div>
-            <button class="btn">Add to cart</button>
+            <button class="btn" onclick="addToCart()">Add to cart</button>
         </div>
     </div>
     <div class="description">
