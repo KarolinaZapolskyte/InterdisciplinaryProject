@@ -8,56 +8,56 @@
 <head>
     <title>Plantify</title>
 </head>
-<body class="max-width">
-    <div class="product-img-price">
-        <div class="product-image border-around">
-            <img src="~/images/mega-grande-ecosystem.svg" alt="Mega Grande Ecosystem" />
-        </div>
-        <div class="product-price border-around">
-            <h1 class="oxygen-bold">Mega Grande Ecosystem</h1>
-            <p class="oxygen-bold">DKK1390.95</p>
-            <div class="quantity">
-                <p class="oxygen-bold">Quantity</p>
-                <div class="input-group">
-                    <input type="text" id="myNumber" class="form-control input-number" value="1" />
-                    <div class="arrows">
-                        <img src="~/images/arrow.svg" id="up" onclick=" up('15')" />
-                        <img src="~/images/arrow.svg" id="down" onclick="down('0')" />
+<body>
+    <div class="max-width">
+        <div class="product-img-price">
+            <div class="product-image border-around">
+                <img src="~/images/mega-grande-ecosystem.svg" alt="Mega Grande Ecosystem" />
+            </div>
+            <div class="product-price border-around">
+                <h1 class="oxygen-bold">Mega Grande Ecosystem</h1>
+                <p class="oxygen-bold">DKK1390.95</p>
+                <div class="quantity">
+                    <p class="oxygen-bold">Quantity</p>
+                    <div class="input-group">
+                        <input type="text" id="myNumber" class="form-control input-number" value="1" />
+                        <div class="arrows">
+                            <img src="~/images/arrow.svg" id="up" onclick=" up('15')" />
+                            <img src="~/images/arrow.svg" id="down" onclick="down('0')" />
+                        </div>
                     </div>
                 </div>
+                <button class="btn" onclick="addToCart()">Add to cart</button>
             </div>
-            <button class="btn" onclick="addToCart()">Add to cart</button>
         </div>
-    </div>
-    <div class="description">
-        <p>The Mega Grande Ecosystem is an elegant flask made from recycled glass and is sealed with a cork lid. It is filled with self-sufficient plants that require no watering or up-keep. <br /><br />The sealed flask allows the process of photosynthesis, keeping the contents fresh and healthy. This indoor garden is a great gift for those who like the look of real plants but lack the time or desire to spend on maintenance. The self-sustaining plants are careflly selected by botanical experts.<br /><br />This item arrives fully assembled, it is also available as a DIY kit for the more green fingered!</p>
-    </div>
-    <h2 class="oxygen-bold">You might also like</h2>
-    <div class="recommended-products">
-        @* Foreach loop to display first 3 products *@
-        <div class="product">
-            <div class="border-around">
-                <img src="~/images/secret-garden-ecosystem.png" alt="Secret Garden Ecosystem" />
+        <div class="description">
+            <p>The Mega Grande Ecosystem is an elegant flask made from recycled glass and is sealed with a cork lid. It is filled with self-sufficient plants that require no watering or up-keep. <br /><br />The sealed flask allows the process of photosynthesis, keeping the contents fresh and healthy. This indoor garden is a great gift for those who like the look of real plants but lack the time or desire to spend on maintenance. The self-sustaining plants are careflly selected by botanical experts.<br /><br />This item arrives fully assembled, it is also available as a DIY kit for the more green fingered!</p>
+        </div>
+        <h2 class="oxygen-bold">You might also like</h2>
+        <div class="recommended-products">
+            @* Foreach loop to display first 3 products *@
+            <div class="product">
+                <div class="border-around">
+                    <img src="~/images/secret-garden-ecosystem.png" alt="Secret Garden Ecosystem" />
+                </div>
+                <p class="product-name oxygen-bold">Secret Garden Ecosystem</p>
+                <p class="product-price">DKK 1240.95</p>
             </div>
-            <p class="product-name oxygen-bold">Secret Garden Ecosystem</p>
-            <p class="product-price">DKK 1240.95</p>
-        </div>
-        <div class="product">
-            <div class="border-around">
-                <img src="~/images/biome-ecosystem.png" alt="Biome Ecosystem" />
+            <div class="product">
+                <div class="border-around">
+                    <img src="~/images/biome-ecosystem.png" alt="Biome Ecosystem" />
+                </div>
+                <p class="product-name oxygen-bold">Biome Ecosystem</p>
+                <p class="product-price">DKK 990.95</p>
             </div>
-            <p class="product-name oxygen-bold">Biome Ecosystem</p>
-            <p class="product-price">DKK 990.95</p>
-        </div>
-        <div class="product">
-            <div class="border-around">
-                <img src="~/images/teardrop-ecosystem.png" alt="Teardrop Ecosystem" />
+            <div class="product">
+                <div class="border-around">
+                    <img src="~/images/teardrop-ecosystem.png" alt="Teardrop Ecosystem" />
+                </div>
+                <p class="product-name oxygen-bold">Teardrop Ecosystem</p>
+                <p class="product-price">DKK 1240.95</p>
             </div>
-            <p class="product-name oxygen-bold">Teardrop Ecosystem</p>
-            <p class="product-price">DKK 1240.95</p>
         </div>
-    </div>
-    <div class="footer">
     </div>
 </body>
 </html>

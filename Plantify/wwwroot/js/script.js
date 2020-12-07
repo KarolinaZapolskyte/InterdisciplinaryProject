@@ -14,6 +14,5 @@ function down() {
 }
 
 function addToCart() {
-    //window.location = '/Cart?returnUrl=%2F'
-
+    window.location = '/Cart?returnUrl=%2F'
 }

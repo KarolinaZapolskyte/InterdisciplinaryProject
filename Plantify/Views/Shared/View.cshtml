@@ -9,7 +9,7 @@
         <strong>@Model.ProductName<br /></strong>
         <weak>@Model.Price</weak><br />
         <p>@Model.Description</p><br />
-        <a href="" class="readMore">Read more ></a>
+        <a href="/ProductPage" class="readMore">Read more ></a>
     </div>
 
     @await Html.PartialAsync("_AddToCartButton", (Product)Model)
