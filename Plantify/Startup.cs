@@ -1,7 +1,6 @@
 using System;
 using Plantify.Data;
 using Plantify.Models.ViewModels;
-using Plantify.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,14 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
 
 namespace Plantify
 {
@@ -39,16 +30,6 @@ namespace Plantify
 
             services.AddDbContext<PlantifyContext>(options => 
             options.UseSqlServer(Configuration.GetConnectionString("PlantifyContext")));
-            services.AddIdentity<AppUser, IdentityRole>(opts => {
-                opts.User.RequireUniqueEmail = true;
-                //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
-                opts.Password.RequiredLength = 6;
-                opts.Password.RequireNonAlphanumeric = false;
-                opts.Password.RequireLowercase = false;
-                opts.Password.RequireUppercase = false;
-                opts.Password.RequireDigit = false;
-            }).AddEntityFrameworkStores<ApplicationIdentityDbContext>()
-            .AddDefaultTokenProviders();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
