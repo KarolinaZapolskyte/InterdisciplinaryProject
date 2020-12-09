@@ -13,6 +13,7 @@
 }
 
 .productsDiv {
+
 }
 
 .landingSection {
@@ -141,6 +142,36 @@ body {
     overflow: hidden;
 }
 
+th{
+    font-family: Hind Madurai;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    padding: 8px;
+    padding-top: 24px !important;
+}
+td{
+    font-family: Hind Madurai;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    padding: 8px;
+}
+
+.control-label{
+    margin-right: 24px;
+}
+.form-group{
+    margin-bottom: 8px;
+}
+.paddingbot {
+    padding-bottom: 24px;
+}
+
 .landingText {
     max-width: 1140px;
     margin-left: auto;
@@ -164,9 +195,21 @@ body {
     line-height: 20px;
 }
 
+.btn-small {
+    padding-left: 24px !important;
+ padding-right: 24px !important;
+ 
+}
+
 .oxygen-bold {
     font-family: 'Oxygen', sans-serif;
     font-weight: 800;
+}
+
+.container-fluid {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .max-width {
