@@ -5,15 +5,15 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2 class="oxygen-bold paddingbot">Administration</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-small">Add an item</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th c>
                 @Html.DisplayNameFor(model => model.ProductName)
             </th>
             <th>
@@ -56,9 +56,9 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ProductID" class="readMore">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.ProductID" class="readMore">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.ProductID" class="readMore">Delete</a>
             </td>
         </tr>
 }

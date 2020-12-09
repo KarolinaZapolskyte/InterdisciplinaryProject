@@ -14,12 +14,14 @@ function down() {
 }
 
 function shortenDescription() {
-    for (let i = 0; i < document.getElementsByClassName('cart-product-description').length; i++) {
-        let description = document.getElementsByClassName('cart-product-description')[i].innerText
-        description = (i, shorten(description, 125));
-        document.getElementsByClassName('cart-product-description')[i].innerText = description + " ..."
+    if (window.location.search === "?returnUrl=%2F") {
+        for (let i = 0; i < document.getElementsByClassName('cart-product-description').length; i++) {
+            let description = document.getElementsByClassName('cart-product-description')[i].innerText
+            description = (i, shorten(description, 125));
+            document.getElementsByClassName('cart-product-description')[i].innerText = description + " ..."
+        }
+        disButtons();
     }
-    disButtons();
 }
 
 function shorten(str, maxLen, separator = ' ') {
@@ -30,7 +32,6 @@ function shorten(str, maxLen, separator = ' ') {
 // Disable button 
 function disButtons() {
     if (!document.getElementsByClassName("all-products")[0]) {
-        console.log('hi')
         document.getElementsByClassName("button-hide")[0].style.display = "none";
         document.getElementsByClassName("button-show")[0].style.display = "block"
     }

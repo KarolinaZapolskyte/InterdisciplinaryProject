@@ -13,6 +13,7 @@
 }
 
 .productsDiv {
+
 }
 
 .landingSection {
@@ -144,6 +145,36 @@ body {
     overflow: hidden;
 }
 
+th{
+    font-family: Hind Madurai;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    padding: 8px;
+    padding-top: 24px !important;
+}
+td{
+    font-family: Hind Madurai;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    padding: 8px;
+}
+
+.control-label{
+    margin-right: 24px;
+}
+.form-group{
+    margin-bottom: 8px;
+}
+.paddingbot {
+    padding-bottom: 24px;
+}
+
 .landingText {
     max-width: 1140px;
     margin-left: auto;
@@ -167,9 +198,22 @@ body {
     line-height: 20px;
 }
 
+.btn-small {
+    padding-left: 24px !important;
+ padding-right: 24px !important;
+
+}
+
 .oxygen-bold {
     font-family: 'Oxygen', sans-serif;
-    font-weight: 800;
+    font-weight: 700;
+    font-size: 16px
+}
+
+.container-fluid {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .max-width {
@@ -179,6 +223,18 @@ body {
     align-items: center;
     justify-content: center;
     margin: auto
+}
+
+.back-btn {
+    display: flex;
+    margin-right: auto;
+    cursor: pointer
+}
+
+.back-btn p {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+    font-size: 14px
 }
 
 .product-img-price {
@@ -240,7 +296,12 @@ body {
         font-size: 16px;
         width: 47px;
         height: 50px;
-        border: none;
+        border: 0;
+        padding: 0
+    }
+
+    .quantity input:active {
+        border: 0;
     }
 
 .input-group {
@@ -259,8 +320,10 @@ body {
 }
 
 .input-number {
-    text-align: center
+    text-align: center;
 }
+
+
 
 .arrows {
     display: flex;
@@ -279,7 +342,8 @@ body {
 }
 
 h2 {
-    font-size: 20px
+    font-size: 20px;
+    font-family: 'Oxygen', sans-serif;
 }
 
 .recommended-products-grid {
@@ -295,6 +359,7 @@ h2 {
 
 .product {
     width: 304px;
+    cursor: pointer
 }
 
 .product-name {
@@ -398,6 +463,35 @@ nav {
     margin-left: auto;
 }
 
+.wrap {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-family: Hind Madurai;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+label {
+    font-family: Hind Madurai;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+input {
+    border: 1px solid #ACCCAB;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+    input:active {
+        border: 1px solid #007F2D;
+    }
 
 /* Cart styling */
 
@@ -444,8 +538,6 @@ nav {
     background: transparent;
     border: 2px solid #ACCCAB;
     color: #ACCCAB;
-    font-family: 'Oxygen', sans-serif;
-    font-weight: 700;
 }
 
     .btn-green-border:hover {
