@@ -11,13 +11,10 @@ namespace Plantify.Controllers
     {
         private Cart cart;
         private PlantifyContext dataContext;
-        public CartController(PlantifyContext dbContext)
-        {
-            dataContext = dbContext;
-        }
-        public CartController(Cart cartService)
+        public CartController(Cart cartService, PlantifyContext dbContext)
         {
             cart = cartService;
+            dataContext = dbContext;
         }
 
         public ViewResult Index(string returnUrl)
