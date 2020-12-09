@@ -12,11 +12,11 @@
     <div class="max-width">
         <div class="product-img-price">
             <div class="product-image border-around">
-                <img src="~/images/mega-grande-ecosystem.svg" alt="Mega Grande Ecosystem" />
+                <img src="~/images/@Model.ImageUrl" alt="@Model.ProductName" />
             </div>
             <div class="product-price border-around">
-                <h1 class="oxygen-bold">Mega Grande Ecosystem</h1>
-                <p class="oxygen-bold">DKK1390.95</p>
+                <h1 class="oxygen-bold">@Model.ProductName</h1>
+                <p class="oxygen-bold">@Model.Price</p>
                 <div class="quantity">
                     <p class="oxygen-bold">Quantity</p>
                     <div class="input-group">
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn" onclick="addToCart()">Add to cart</button>
+                @await Html.PartialAsync("_AddToCartButton", (Product)Model)
             </div>
         </div>
         <div class="description">
