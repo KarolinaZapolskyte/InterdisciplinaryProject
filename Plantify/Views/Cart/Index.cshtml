@@ -53,29 +53,29 @@
     <p class="oxygen-bold total-price">@Model.Cart.ComputeTotalValue().ToString("c", CultureInfo.CreateSpecificCulture("da-DK"))</p>
 </div>
 <div class="button-grid max-width">
-    <button class="btn btn-green-border width-200" onclick="location='@(Model.ReturnUrl)'">Continue shopping</button>
+    <button class="btn btn-green-border width-200" onclick="location='/'">Continue shopping</button>
     <button class="btn width-200 button-hide" onclick="location.href='@Url.Action("Checkout", "Order")'">Proceed to checkout</button>
     <button class="btn button-show width-200">Proceed to checkout</button>
 </div>
 <div class="recommended-products">
-    <h2 class="oxygen-bold max-width text-left">You might also like</h2>
+    <h2 class="max-width oxygen-bold font-18">You might also like</h2>
     <div class="recommended-products-grid max-width">
         @* Foreach loop to display first 3 products *@
-        <div class="product">
+        <div class="product" onclick="location='/ProductPage/Index/2'">
             <div class="border-around">
                 <img src="~/images/secret-garden-ecosystem.png" alt="Secret Garden Ecosystem" />
             </div>
             <p class="product-name oxygen-bold">Secret Garden Ecosystem</p>
             <p class="recom-product-price">DKK 1240.95</p>
         </div>
-        <div class="product">
+        <div class="product" onclick="location='/ProductPage/Index/3'">
             <div class="border-around">
                 <img src="~/images/biome-ecosystem.png" alt="Biome Ecosystem" />
             </div>
             <p class="product-name oxygen-bold">Biome Ecosystem</p>
             <p class="recom-product-price">DKK 990.95</p>
         </div>
-        <div class="product">
+        <div class="product" onclick="location='/ProductPage/Index/4'">
             <div class="border-around">
                 <img src="~/images/teardrop-ecosystem.png" alt="Teardrop Ecosystem" />
             </div>
