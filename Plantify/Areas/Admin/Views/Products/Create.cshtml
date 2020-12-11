@@ -7,39 +7,44 @@
 
 <h2>Create</h2>
 
-<h4>Product</h4>
+<h3>Product</h3>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+
         <form asp-action="Create" id="createForm">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ProductName" class="control-label"></label>
+                <br />
                 <input asp-for="ProductName" class="form-control" />
                 <span asp-validation-for="ProductName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Price" class="control-label"></label>
+                <br />
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ImageUrl" class="control-label"></label>
+                <br />
                 <input asp-for="ImageUrl" class="form-control" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Category" class="control-label"></label>
+                <br />
                 <input asp-for="Category" class="form-control" />
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Stock" class="control-label"></label>
+                <br />
                 <input asp-for="Stock" class="form-control" />
                 <span asp-validation-for="Stock" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
+                <br />
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
@@ -47,15 +52,14 @@
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </form>
-    </div>
-</div>
+
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
 
 <script type="text/javascript">
-    $("#createForm").on("keyup", function () {
+    $("#createForm").on("input", function () {
         $("#createForm").validate({
             rules: {
                 ProductName: {
@@ -71,13 +75,13 @@
             },
             messages: {
                 ProductName: {
-                    required: "First Name is a required field!!!"
+                    required: "ProductName is a required field!!!"
                 },
                 Price: {
-                    required: "Last Name is a required field!!!"
+                    required: "Price is a required field!!!"
                 },
                 ImageUrl: {
-                    required: "Favorite movie is a required field!!!"
+                    required: "ImageUrl is a required field!!!"
                 }
             }
         });
