@@ -61,6 +61,8 @@
     cursor: pointer;
     text-decoration: none;
     outline: none !important;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 700
 }
 
     .btn:hover {
@@ -72,11 +74,12 @@
 
 
 .btn-pagination {
- display: flex;
- justify-content: center;
- align-items: center;
- margin-top: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 56px;
 }
+
     .btn-pagination a {
         background: #007F2D;
         border-radius: 8px;
@@ -91,9 +94,9 @@
         text-align: center;
     }
 
-    .btn-pagination a:hover {
-        background: #ACCCAB;
-    }
+        .btn-pagination a:hover {
+            background: #ACCCAB;
+        }
 
 .landingSection .btn {
 }
@@ -203,12 +206,13 @@ td{
 .btn-small {
     padding-left: 24px !important;
  padding-right: 24px !important;
- 
+
 }
 
 .oxygen-bold {
     font-family: 'Oxygen', sans-serif;
-    font-weight: 800;
+    font-weight: 700;
+    font-size: 16px
 }
 
 .container-fluid {
@@ -224,6 +228,18 @@ td{
     align-items: center;
     justify-content: center;
     margin: auto
+}
+
+.back-btn {
+    display: flex;
+    margin-right: auto;
+    cursor: pointer
+}
+
+.back-btn p {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+    font-size: 14px
 }
 
 .product-img-price {
@@ -277,16 +293,21 @@ td{
     grid-row-gap: 0px;
 }
 
-.quantity p {
-    font-size: 16px;
-}
+    .quantity p {
+        font-size: 16px;
+    }
 
-.quantity input {
-    font-size: 16px;
-    width: 47px;
-    height: 50px;
-    border: none;
-}
+    .quantity input {
+        font-size: 16px;
+        width: 47px;
+        height: 50px;
+        border: 0;
+        padding: 0
+    }
+
+    .quantity input:active {
+        border: 0;
+    }
 
 .input-group {
     border: 1px solid #ACCCAB;
@@ -304,8 +325,10 @@ td{
 }
 
 .input-number {
-    text-align: center
+    text-align: center;
 }
+
+
 
 .arrows {
     display: flex;
@@ -328,7 +351,7 @@ h2 {
     font-family: 'Oxygen', sans-serif;
 }
 
-.recommended-products {
+.recommended-products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -338,8 +361,10 @@ h2 {
     height: 400px
 }
 
+
 .product {
     width: 304px;
+    cursor: pointer
 }
 
 .product-name {
@@ -347,6 +372,12 @@ h2 {
 }
 
 .product-price {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+    font-size: 20px
+}
+
+.recom-product-price {
     font-family: 'Oxygen', sans-serif;
     font-weight: 300;
     font-size: 20px
@@ -426,6 +457,7 @@ nav {
     grid-column-gap: 100px;
     grid-row-gap: 0px;
 }
+
 .nav-icons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -508,4 +540,218 @@ input {
     .shopNow{
         margin-left: 20px;
     }
+}
+        border: 1px solid #007F2D;
+    }
+
+/* Cart styling */
+
+.green-underline {
+    max-width: 1140px;
+    margin: auto;
+    border-bottom: 1px solid #ACCCAB;
+}
+
+.product-img {
+    width: 128px;
+    height: 119px;
+    margin-right: 40px
+}
+
+.cart-product-description {
+    width: 305px;
+    margin-right: 38px;
+    font-family: 'Hind Madurai', sans-serif;
+    font-weight: 400;
+}
+
+.font-14 {
+    font-size: 14px
+}
+
+.empty-name {
+    width: 355px
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.margin-top {
+    margin-top: 80px
+}
+
+.btn-green-border {
+    background: transparent;
+    border: 2px solid #ACCCAB;
+    color: #ACCCAB;
+}
+
+    .btn-green-border:hover {
+        border: 2px solid #007F2D;
+        color: #007F2D;
+        background: transparent
+    }
+
+.width-200 {
+    width: 200px;
+    height: 40px;
+    padding: 10px
+}
+
+.button-show {
+    display: none;
+    background: #727272;
+    cursor: default;
+    margin-left: auto
+}
+
+    .button-show:hover {
+        background: #727272;
+        cursor: default
+    }
+
+.button-hide {
+    margin-left: auto
+}
+
+.transparent-btn {
+    margin-top: 16px;
+    background: transparent;
+    border: 0;
+    margin-left: 121px
+}
+
+    .transparent-btn:hover {
+        background: transparent;
+        border: 0
+    }
+
+    .transparent-btn:active {
+        background: transparent;
+        border: 0
+    }
+
+.grid-width {
+    width: 157px
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-top: 64px;
+    margin-bottom: 95px
+}
+
+.total-price {
+    margin-left: 260px
+}
+
+.text-left {
+    display: flex;
+    align-items: end;
+}
+
+/* Media queries */
+@media (min-width: 1024px) {
+    .is-hidden-desktop {
+        display: none
+    }
+}
+
+@media (max-width: 1024px) {
+    .is-hidden-touch {
+        display: none !important
+    }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cart-product-description {
+        width: auto
+    }
+    .text-center {
+        text-align: center
+    }
+    .recommended-products-grid {
+        grid-template-columns: repeat(1, 1fr);
+        height: auto
+    }
+    .recommended-products {
+        text-align: center
+    }
+    .text-left {
+        align-items: center
+    }
+    .product {
+        width: 320px;
+        margin: auto;
+        height: inherit
+    }
+    .green-underline {
+        margin-top: 15px;
+    }
+    .btn {
+        width: 150px;
+        height: 35px;
+        padding: 5px;
+        font-size: 14px
+    }
+    .remove-btn {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px
+    }
+    .product-grid, .price-grid, .button-grid {
+        padding: 0 10px
+    }
+    .total-price {
+        margin-left: auto
+    }
+    .nav-content {
+        padding: 0 10px
+    }
+    footer {
+        margin-top: 50px;
+        padding: 35px 10px
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .margin-left {
+        width: auto
+    }
+    .service, .about {
+        margin-top: 25px
+    }
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px
+    }
+    .copyright {
+        margin-top: 45px
+    }
+
 }

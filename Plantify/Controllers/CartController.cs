@@ -16,7 +16,6 @@ namespace Plantify.Controllers
             cart = cartService;
             dataContext = dbContext;
         }
-      
 
         public ViewResult Index(string returnUrl)
         {
