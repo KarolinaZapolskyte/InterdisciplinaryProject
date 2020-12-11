@@ -79,10 +79,10 @@
         <div class="landingText">
             <h1 class="heroTxt">Service for home plants</h1>
             <p class="pTxt">Simple, sophisticated and effortlessly elegant. Our Ecosphere Terrariums and bottle gardens combine an attractive light fitting with natural beauty, such as perennial grasses, or a seasonal succulent on preserved reindeer moss. </p>
-            <button class="btn shopNow">Shop now</button>
+            <a class="btn shopNow" href="#pppp">Shop now</a>
         </div>
         <h2>@Model.CurrentCategory</h2>
-        <div class="productsDiv">
+        <div class="productsDiv" id="pppp">
 
             @foreach (Product product in Model.Products.OfType<Product>().ToList())
             {

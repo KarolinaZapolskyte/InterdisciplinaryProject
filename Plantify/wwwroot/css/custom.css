@@ -30,12 +30,13 @@
 }
 
 .productSection .heroTxt {
-    font-style: normal;
     font-weight: bold;
     font-size: 64px;
     line-height: 81px;
     color: #FFFFFF;
     font-family: 'Oxygen', sans-serif;
+    position: relative;
+    width: 100%;
 }
 
 .productSection .pTxt {
@@ -66,6 +67,9 @@
     .btn:hover {
         background: #30BA00;
     }
+* {
+    scroll-behavior: smooth;
+}
 
 
 .btn-pagination {
@@ -183,6 +187,7 @@ td {
     margin-right: auto;
     position: absolute;
     top: 98px;
+   
 }
 
 .card-text .btn {
@@ -491,6 +496,52 @@ input {
 }
 
     input:active {
+        border: 1px solid #007F2D !important;
+    }
+
+
+@media only screen and (max-width: 1140px) {
+
+    .productsDiv {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 56px;
+        grid-row-gap: 72px;
+        margin: 16px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .productsDiv {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-column-gap: 56px;
+        grid-row-gap: 72px;
+    }
+    .productSection .heroTxt {
+        font-size: 32px;
+        line-height: 40px;
+        word-wrap: break-word !important;
+        margin-left: 20px;
+       
+    }
+    .productSection .pTxt {
+       
+        font-size: 12px;
+        line-height: 18px;
+        color: #FFFFFF;
+        width: auto;
+        margin-left: 20px;
+        
+
+    }
+    .shopNow{
+        margin-left: 20px;
+    }
+}
         border: 1px solid #007F2D;
     }
 
