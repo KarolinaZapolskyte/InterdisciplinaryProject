@@ -11,14 +11,14 @@ namespace Plantify.Controllers
     {
 
         private PlantifyContext dataContext;
-        
+
         public ProductPageController(PlantifyContext dbContext) { dataContext = dbContext; }
 
 
-        
+
         public IActionResult Index(int id)
         {
-       
+
             return View(dataContext.Products.Where(p => p.ProductID == id).FirstOrDefault());
         }
     }

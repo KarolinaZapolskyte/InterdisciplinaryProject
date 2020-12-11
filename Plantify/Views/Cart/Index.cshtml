@@ -1,52 +1,86 @@
 ﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
 @using Plantify.Models.ViewModels
 @model CartIndexViewModel
-<h2>Your cart</h2>
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Quantity</th>
-            <th>Item</th>
-            <th class="text-right">Price</th>
-            <th class="text-right">Subtotal</th>
-        </tr>
-    </thead>
-    <tbody id="myTable">
-        @foreach (var line in Model.Cart.Lines)
-        {
-            <tr>
-                <td class="text-center">@line.Quantity</td>
-                <td class="text-left">@line.Product.ProductName</td>
-                <td class="text-right">@line.Product.Price.ToString("c")</td>
-                <td class="text-right">
-                    @((line.Quantity * line.Product.Price).ToString("c"))
-                </td>
-                <td>
+@using System.Globalization;
+<div class="green-underline product-grid margin-top is-hidden-touch">
+    <p class="oxygen-bold font-14">Item</p>
+    <p class="empty-name"></p>
+    <p class="oxygen-bold font-14">Price</p>
+    <p class="oxygen-bold font-14">Quantity</p>
+    <p class="oxygen-bold font-14">Subtotal</p>
+</div>
+<div id="myTable">
+    @foreach (var line in Model.Cart.Lines)
+    {
+        <div class="green-underline">
+            <div class="product-grid all-products">
+                <img src="~/images/@line.Product.ImageUrl" alt="@line.Product.ProductName" class="product-img" />
+                <p class="oxygen-bold cart-product-description font-14">@line.Product.Description</p>
+                <p class="oxygen-bold is-hidden-desktop font-14">Price</p>
+                <p class="oxygen-bold grid-width">@line.Product.Price.ToString("c", CultureInfo.CreateSpecificCulture("da-DK"))</p>
+                <p class="oxygen-bold is-hidden-desktop font-14">Quantity</p>
+                <p class="oxygen-bold grid-width">@line.Quantity</p>
+                <p class="oxygen-bold is-hidden-desktop font-14">Subtotal</p>
+                <p class="oxygen-bold grid-width">@((line.Quantity * line.Product.Price).ToString("c", CultureInfo.CreateSpecificCulture("da-DK")))</p>
+                <div class="is-hidden-touch">
                     <form asp-action="RemoveFromCart" method="post">
                         <input type="hidden" name="ProductID"
                                value="@line.Product.ProductID" />
                         <input type="hidden" name="returnUrl"
                                value="@Model.ReturnUrl" />
-                        <button type="submit" class="btn btn-sm btn-danger">
-                            Remove
+                        <button type="submit" class="transparent-btn">
+                            <img src="~/images/remove-btn.svg" alt="Remove button icon" />
                         </button>
                     </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3" class="text-right">Total:</td>
-            <td class="text-right">
-                @Model.Cart.ComputeTotalValue().ToString("c")
-            </td>
-        </tr>
-    </tfoot>
-</table>
-<div class="text-center">
-    <a class="btn btn-primary" href="@(Model.ReturnUrl)">Continue shopping</a>
-    <a class="btn btn-primary" asp-action="Checkout" asp-controller="Order">
-        Checkout
-    </a>
+                </div>
+            </div>
+            <div class="is-hidden-desktop remove-btn">
+                <form asp-action="RemoveFromCart" method="post">
+                    <input type="hidden" name="ProductID"
+                           value="@line.Product.ProductID" />
+                    <input type="hidden" name="returnUrl"
+                           value="@Model.ReturnUrl" />
+                    <button type="submit" class="btn">
+                        Remove item
+                    </button>
+                </form>
+            </div>
+        </div>
+    }
+</div>
+<div class="price-grid max-width">
+    <p colspan="3" class="oxygen-bold font-14">Order total</p>
+    <p class="oxygen-bold total-price">@Model.Cart.ComputeTotalValue().ToString("c", CultureInfo.CreateSpecificCulture("da-DK"))</p>
+</div>
+<div class="button-grid max-width">
+    <button class="btn btn-green-border width-200" onclick="location='/'">Continue shopping</button>
+    <button class="btn width-200 button-hide" onclick="location.href='@Url.Action("Checkout", "Order")'">Proceed to checkout</button>
+    <button class="btn button-show width-200">Proceed to checkout</button>
+</div>
+<div class="recommended-products">
+    <h2 class="max-width oxygen-bold font-18">You might also like</h2>
+    <div class="recommended-products-grid max-width">
+        @* Foreach loop to display first 3 products *@
+        <div class="product" onclick="location='/ProductPage/Index/2'">
+            <div class="border-around">
+                <img src="~/images/secret-garden-ecosystem.png" alt="Secret Garden Ecosystem" />
+            </div>
+            <p class="product-name oxygen-bold">Secret Garden Ecosystem</p>
+            <p class="recom-product-price">DKK 1240.95</p>
+        </div>
+        <div class="product" onclick="location='/ProductPage/Index/3'">
+            <div class="border-around">
+                <img src="~/images/biome-ecosystem.png" alt="Biome Ecosystem" />
+            </div>
+            <p class="product-name oxygen-bold">Biome Ecosystem</p>
+            <p class="recom-product-price">DKK 990.95</p>
+        </div>
+        <div class="product" onclick="location='/ProductPage/Index/7'">
+            <div class="border-around">
+                <img src="~/images/teardrop-ecosystem.png" alt="Teardrop Ecosystem" />
+            </div>
+            <p class="product-name oxygen-bold">Teardrop Ecosystem</p>
+            <p class="recom-product-price">DKK 1240.95</p>
+        </div>
+    </div>
 </div>
