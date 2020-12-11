@@ -10,57 +10,62 @@
 <p>
     <a asp-action="Create" class="btn btn-small">Add an item</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th >
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Stock)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stock)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductID" class="readMore">Edit</a> 
-                <a asp-action="Details" asp-route-id="@item.ProductID" class="readMore">Details</a> 
+<div class="table">
+    <div class="is-hidden-touch">
+        <p class="font-14 oxygen-bold">
+            @Html.DisplayNameFor(model => model.ProductName)
+        </p>
+        <p class="font-14 oxygen-bold">
+            @Html.DisplayNameFor(model => model.Price)
+        </p>
+        <p class="font-14 oxygen-bold">
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </p>
+        <p class="font-14 oxygen-bold">
+            @Html.DisplayNameFor(model => model.Category)
+        </p>
+        <p class="font-14 oxygen-bold">
+            @Html.DisplayNameFor(model => model.Stock)
+        </p>
+        <p class="font-14 oxygen-bold">
+            @Html.DisplayNameFor(model => model.Description)
+        </p>
+        <p></p>
+    </div>
+    <div>
+        @foreach (var item in Model)
+        {
+            <div>
+                <p class="font-14 oxygen-bold">
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </p>
+                <p class="font-14 oxygen-bold">
+                    @Html.DisplayFor(modelItem => item.Price)
+                </p>
+                <p class="font-14 oxygen-bold">
+                    @Html.DisplayFor(modelItem => item.ImageUrl)
+                </p>
+                <p class="font-14 oxygen-bold">
+                    @Html.DisplayFor(modelItem => item.Category)
+                </p>
+                <p class="font-14 oxygen-bold">
+                    @Html.DisplayFor(modelItem => item.Stock)
+                </p>
+                <p class="font-14 oxygen-bold">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </p>
+                <div class="is-hidden-touch">
+                    <a asp-action="Edit" asp-route-id="@item.ProductID" class="readMore">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.ProductID" class="readMore">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.ProductID" class="readMore">Delete</a>
+                </div>
+            </div>
+            <div class="admin-btn is-hidden-desktop">
+                <a asp-action="Edit" asp-route-id="@item.ProductID" class="readMore">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.ProductID" class="readMore">Details</a>
                 <a asp-action="Delete" asp-route-id="@item.ProductID" class="readMore">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            </div>
+            <hr />
+        }
+    </div>
+</div>

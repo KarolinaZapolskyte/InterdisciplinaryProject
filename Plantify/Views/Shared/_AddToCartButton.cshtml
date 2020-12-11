@@ -1,7 +1,7 @@
 ﻿@model Plantify.Models.Product
 @using Plantify.Infrastructure
 
-<div class="col-md-6">
+
     <form id="@Model.ProductID" asp-action="AddToCart"
           asp-controller="Cart" method="post">
         <input type="hidden" name="ProductID" value="@Model.ProductID" />
@@ -14,4 +14,4 @@
             </button>
         </span>
     </form>
-</div>
+
