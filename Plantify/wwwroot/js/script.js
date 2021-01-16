@@ -35,13 +35,7 @@ function shorten(str, maxLen, separator = ' ') {
     return str.substr(0, str.lastIndexOf(separator, maxLen));
 }
 
-// Function for disabling a "Proceed to checkout" button id there is 0 elements in a cart
-function disButtons() {
-    if (!document.getElementsByClassName("all-products")[0]) {
-        document.getElementsByClassName("button-hide")[0].style.display = "none";
-        document.getElementsByClassName("button-show")[0].style.display = "block"
-    }
-}
+
 
 // Function for putting quantity value to 0 and disabling the button, if the we don't have item in stock
 function noStock() {
